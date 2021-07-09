@@ -6,3 +6,50 @@
     border-radius: 5px;
     margin-top: 1em;
 }
+
+#optionH1{
+    vertical-align: text-top;
+    text-align: left;
+}
+
+.sliderContainer{
+    width: 50%;
+    border: black 2px dashed;
+    display: inline-block;
+}
+
+.slider{
+    display: inline;
+    appearance: none;
+    background: grey;
+    opacity: 0.8;
+    border-radius: 10px; 
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1; 
+  }
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: black;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+}
+
+#sliderInfo{
+    display: inline;
+}
