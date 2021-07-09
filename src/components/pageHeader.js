@@ -4,9 +4,9 @@ import '../styles/header.css'
 class Header extends Component{
     render(){
         return(
-            <div className = "Header">
+            <div className = "Header fixed-top">
                 <h1>Password Generator</h1>
-                <i>&#128273;</i>
+                {/* <i>&#128273;</i> */}
             </div>
         );
     }
