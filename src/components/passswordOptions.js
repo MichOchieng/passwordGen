@@ -5,7 +5,7 @@ class Options extends Component{
     render(){
         return(
             <div className = "Options">
-                <h1>Test</h1>
+                <h1>Password Options</h1>
                 
             </div>
         );
