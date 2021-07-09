@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 import '../styles/options.css'
 
+// Slider logic
+const slider = document.getElementById("mySlider");
+const info = document.getElementById("sliderInfo");
+info.innerHTML = slider.value;
+slider.oninput = function() {
+    info.innerHTML = this.value;
+}
+
 class Options extends Component{
     render(){
         return(
@@ -8,11 +16,11 @@ class Options extends Component{
                 <h1 id = "optionH1">Password Options</h1>
                 
                 <div class="sliderContainer">
-                    <input id="sliderInfo"></input>
-                    <input type="range" min="6" max="256" value="6" class="slider" id="mySlider"></input>
+                    <input id="sliderInfo" type="text" readonly></input>
+                    <input type="range" min="6" max="256" class="slider" id="mySlider"></input>
                     
                 </div>
-
+                
             </div>
             
         );
