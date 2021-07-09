@@ -10,7 +10,7 @@ import './styles/App.css';
 function App() {
   return (
     <div className="App-body">
-      <Container fluid>
+      <Container>
         <Row>
           <Header/>
         </Row>
