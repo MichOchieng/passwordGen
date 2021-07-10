@@ -16,12 +16,14 @@
     width: 50%;
     border: black 2px dashed;
     display: inline-block;
+
 }
 
 .slider{
     display: inline;
     appearance: none;
     background: grey;
+    width: 80%;
     opacity: 0.8;
     border-radius: 10px; 
     -webkit-transition: .2s;
@@ -51,5 +53,8 @@
 }
 
 #sliderInfo{
-    display: inline;
+    display: inline-block;
+    width: 20%;
+    border:0;
+    text-align: center;
 }
