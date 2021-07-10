@@ -1,4 +1,5 @@
 import React, {Component, useState} from 'react';
+import { Row,Col, Form } from 'react-bootstrap';
 import '../styles/options.css';
 
 
@@ -22,28 +23,57 @@ class Options extends Component{
     render(){
         return(
             <div className = "Options">
-                <h1 id = "optionH1">Password Options</h1>
-                {/* Inputs for slider */}
-                <div class="sliderContainer">
-                    <input 
-                        id="sliderInfo" 
-                        type="text"
-                        value={this.state.count}
-                        onClick={this.view}
-                        readOnly></input>
-                    <input 
-                        type="range" 
-                        min={this.state.count} 
-                        max="256" 
-                        defaultValue="6"
-                        class="slider" 
-                        id="mySlider"
-                        onInput={this.updateSlider}
-                        ></input>
-                      
-                </div>
-                {/* Buttons for other options */}
-
+                <Row>
+                <h1 id = "leftHeaders">Password Options</h1>
+                    <Col>
+                        {/* Inputs for slider */}
+                        <div class="sliderContainer">
+                            <h3 id = "leftHeaders">Password Length</h3>
+                            <input 
+                                id="sliderInfo" 
+                                type="text"
+                                value={this.state.count}
+                                onClick={this.view}
+                                readOnly></input>
+                            <input 
+                                type="range" 
+                                min={this.state.count} 
+                                max="256" 
+                                defaultValue="6"
+                                class="slider" 
+                                id="mySlider"
+                                onInput={this.updateSlider}
+                                ></input>
+                            
+                        </div>
+                    </Col>
+                    <Col>
+                        {/* Buttons for other options */}
+                        <div class="formButtons">
+                            <Form.Check
+                                type="checkbox"
+                                id={'defaul-${type}'}
+                                label="Uppercase"
+                            ></Form.Check>
+                            <Form.Check
+                                type="checkbox"
+                                id={'defaul-${type}'}
+                                label="Lowercase"
+                            ></Form.Check>
+                            <Form.Check
+                                type="checkbox"
+                                id={'defaul-${type}'}
+                                label="Numbers"
+                            ></Form.Check>
+                            <Form.Check
+                                type="checkbox"
+                                id={'defaul-${type}'}
+                                label="Symbols"
+                            ></Form.Check>
+                        </div>
+                    </Col>
+                </Row>
+                
 
             </div>
             
