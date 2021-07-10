@@ -7,16 +7,18 @@
     margin-top: 1em;
 }
 
-#optionH1{
+#leftHeaders{
     vertical-align: text-top;
     text-align: left;
 }
 
+/* Slider styling */
 .sliderContainer{
-    width: 50%;
+    
     border: black 2px dashed;
     display: inline-block;
-
+    position: relative;
+    justify-self: left;
 }
 
 .slider{
@@ -58,3 +60,5 @@
     border:0;
     text-align: center;
 }
+
+/* Button group */
