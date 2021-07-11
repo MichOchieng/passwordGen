@@ -52,23 +52,27 @@ class Options extends Component{
                         <div class="formButtons">
                             <Form.Check
                                 type="checkbox"
-                                id={'defaul-${type}'}
+                                id="uppercaseButton"
                                 label="Uppercase"
+                                defaultChecked="true"
                             ></Form.Check>
                             <Form.Check
                                 type="checkbox"
-                                id={'defaul-${type}'}
+                                id="lowercaseButton"
                                 label="Lowercase"
+                                defaultChecked="true"
                             ></Form.Check>
                             <Form.Check
                                 type="checkbox"
-                                id={'defaul-${type}'}
+                                id="numberButton"
                                 label="Numbers"
+                                defaultChecked="true"
                             ></Form.Check>
                             <Form.Check
                                 type="checkbox"
-                                id={'defaul-${type}'}
+                                id="symbolsButton"
                                 label="Symbols"
+                                defaultChecked="true"
                             ></Form.Check>
                         </div>
                     </Col>
