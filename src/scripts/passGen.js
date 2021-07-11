@@ -1,6 +1,6 @@
-const generartePassword = (pass) => {
+const generartePassword = () => {
     // Clear password
-    pass = "";
+    var pass = "";
     // Alphabets
     const upperAlphabet  = "QWERTYUIOPASDFGHJKLZXCVBNM";
     const lowerAlphabet  = "qwertyuiopasdfghjklzxcvbnm";
