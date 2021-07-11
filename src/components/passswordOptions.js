@@ -44,7 +44,9 @@ class Options extends Component{
                                 defaultValue="6"
                                 class="slider" 
                                 id="mySlider"
-                                onInput={this.updateSlider}
+                                onInput={
+                                    this.updateSlider
+                                }
                                 ></input>
                             
                         </div>
