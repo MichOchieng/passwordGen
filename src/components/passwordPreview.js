@@ -5,17 +5,20 @@ import { Button, FormControl, InputGroup } from 'react-bootstrap';
 import '../styles/preview.css'
 
 class Preview extends Component{
-    // constructor(props){
-    //     super(props);
-    //     this.
-    // }
+    constructor(props){
+        super(props);
+        this.state = {
+            password: ""
+        }; 
+        this.generartePassword = this.generartePassword.bind(this);
+    }
 
     // Will load the initial password to the preview box 
     componentDidMount(){
-        
+        this.generartePassword();
     }
-
-    generartePassword(password){
+    
+    generartePassword(){
         // Alphabets
         const upperAlphabet  = "QWERTYUIOPASDFGHJKLZXCVBNM";
         const lowerAlphabet  = "qwertyuiopasdfghjklzxcvbnm";
@@ -29,8 +32,38 @@ class Preview extends Component{
         var hasNums      = document.getElementById("numberButton").value;
         var hasSymbols   = document.getElementById("symbolsButton").value;
 
-        
-        // 
+        // Check password critria
+        for (let index = 0; index <= passLength; index++) {
+            if (hasUppercase && index<=passLength) {
+                // Add uppercase char to password
+                this.state.password += upperAlphabet[Math.floor(Math.random()*upperAlphabet.length)];
+                console.log("Current pass: " + this.state.password);
+                index++;
+            }  
+            if (hasLowercase && index<=passLength) {
+                // Add lowercase char to password
+                this.state.password += lowerAlphabet[Math.floor(Math.random()*lowerAlphabet.length)];
+                console.log("Current pass: " + this.state.password);
+                index++;
+            }
+            if (hasNums && index<=passLength) {
+                // Add number to password
+                this.state.password += numbers[Math.floor(Math.random()*numbers.length)];
+                console.log("Current pass: " + this.state.password);
+                index++;
+            }
+            if (hasSymbols && index<=passLength) {
+                // Add symbol char to password
+                this.state.password += symbolAlphabet[Math.floor(Math.random()*symbolAlphabet.length)];
+                console.log("Current pass: " + this.state.password);
+                index++;
+            }
+            
+        }
+        console.log("Pass: " + this.state.password);
+
+        // Scramble and return password 
+
     }
 
     render(){
