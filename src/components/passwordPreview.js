@@ -8,16 +8,12 @@ import generartePassword from '../scripts/passGen'
 class Preview extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            password: ""
-        }; 
-        // this.generartePassword = this.generartePassword.bind(this);
-        this.copyPassword      = this.copyPassword.bind(this);
+        this.copyPassword = this.copyPassword.bind(this);
     }
 
     // Will load the initial password to the preview box 
     componentDidMount(){
-        generartePassword(this.state.password);
+        generartePassword();
     }
 
     copyPassword(){
@@ -45,7 +41,7 @@ class Preview extends Component{
                         title="Copy"
                         onClick={
                             () => {
-                                this.copyPassword()
+                                this.copyPassword();
                             }
                         }
                         >
@@ -59,7 +55,7 @@ class Preview extends Component{
                         title="Refresh"
                         onClick={
                             () => {
-                                generartePassword()
+                                generartePassword();
                             }
                         }
                         >
