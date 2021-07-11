@@ -1,6 +1,7 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import { Row,Col, Form } from 'react-bootstrap';
 import '../styles/options.css';
+import generartePassword from '../scripts/passGen'
 
 
 class Options extends Component{
@@ -13,6 +14,7 @@ class Options extends Component{
 
     // Allows slider value to be updated visually by simulating a click on the input box
     updateSlider(){ 
+        generartePassword();
         document.getElementById("sliderInfo").click();
     }
     // Updates the value of the input box
