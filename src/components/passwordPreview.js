@@ -11,6 +11,7 @@ class Preview extends Component{
             password: ""
         }; 
         this.generartePassword = this.generartePassword.bind(this);
+        this.copyPassword      = this.copyPassword.bind(this);
     }
 
     // Will load the initial password to the preview box 
@@ -19,6 +20,8 @@ class Preview extends Component{
     }
     
     generartePassword(){
+        // Clear password
+        this.state.password = "";
         // Alphabets
         const upperAlphabet  = "QWERTYUIOPASDFGHJKLZXCVBNM";
         const lowerAlphabet  = "qwertyuiopasdfghjklzxcvbnm";
@@ -37,45 +40,73 @@ class Preview extends Component{
             if (hasUppercase && index<=passLength) {
                 // Add uppercase char to password
                 this.state.password += upperAlphabet[Math.floor(Math.random()*upperAlphabet.length)];
-                console.log("Current pass: " + this.state.password);
                 index++;
             }  
             if (hasLowercase && index<=passLength) {
                 // Add lowercase char to password
                 this.state.password += lowerAlphabet[Math.floor(Math.random()*lowerAlphabet.length)];
-                console.log("Current pass: " + this.state.password);
                 index++;
             }
             if (hasNums && index<=passLength) {
                 // Add number to password
                 this.state.password += numbers[Math.floor(Math.random()*numbers.length)];
-                console.log("Current pass: " + this.state.password);
                 index++;
             }
             if (hasSymbols && index<=passLength) {
                 // Add symbol char to password
                 this.state.password += symbolAlphabet[Math.floor(Math.random()*symbolAlphabet.length)];
-                console.log("Current pass: " + this.state.password);
                 index++;
             }
             
         }
-        console.log("Pass: " + this.state.password);
+        // Return password 
+        document.getElementById("passwordPreview" ).value = this.state.password
+    }
 
-        // Scramble and return password 
-
+    copyPassword(){
+        var pass = document.getElementById("passwordPreview");
+        pass.focus();
+        pass.select();
+        pass.setSelectionRange(0, 99999);
+        document.execCommand("copy");
     }
 
     render(){
         return(
             <div className = "Preview">
                 <InputGroup>
-                    <FormControl id= "noBorder" placeholder = "Password"></FormControl>
-                    <Button variant="outline-secondary" class="btn btn-link" id="noBorder" data-toggle="tooltip" data-placement="right" title="Copy">
-                        <FontAwesomeIcon icon={faCopy}/>    
+                    <FormControl 
+                        id= "passwordPreview" 
+                    >
+                    </FormControl>
+                    <Button 
+                        variant="outline-secondary" 
+                        class="btn btn-link" 
+                        id="noBorder" 
+                        data-toggle="tooltip" 
+                        data-placement="right" 
+                        title="Copy"
+                        onClick={
+                            () => {
+                                this.copyPassword()
+                            }
+                        }
+                        >
+                            <FontAwesomeIcon icon={faCopy}/>    
                     </Button>
-                    <Button variant="outline-secondary" class="btn btn-link" id="noBorder" data-toggle="tooltip" data-placement="right" title="Refresh">
-                        <FontAwesomeIcon icon={faSync}/>
+                    <Button 
+                        variant="outline-secondary" 
+                        class="btn btn-link" id="noBorder" 
+                        data-toggle="tooltip" 
+                        data-placement="right" 
+                        title="Refresh"
+                        onClick={
+                            () => {
+                                this.generartePassword()
+                            }
+                        }
+                        >
+                            <FontAwesomeIcon icon={faSync}/>
                     </Button>
                 </InputGroup>
                 
