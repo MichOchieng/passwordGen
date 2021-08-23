@@ -9,4 +9,4 @@ Secure password generator with options that allow you to change password length 
     - Symbols
 
 # Features and Fixes to Add
-- ~~Add an indicator that displays password strength
+-  ~~Add an indicator that displays password strength
