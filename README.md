@@ -7,6 +7,4 @@ Secure password generator with options that allow you to change password length 
     - Upper/Lowercase Letters
     - Numbers
     - Symbols
-
-# Features and Fixes to Add
--  ~~Add an indicator that displays password strength
+- Indicator that displays password strength
